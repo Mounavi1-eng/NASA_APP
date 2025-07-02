@@ -20,7 +20,7 @@ const APODPage = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get('/api/apod'); // fetch today's picture
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE}/api/apod`); // fetch today's picture
       setApod(res.data);
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to fetch APOD data');
