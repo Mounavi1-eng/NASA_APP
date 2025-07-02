@@ -9,7 +9,9 @@ const PORT = process.env.PORT || 5000;
 const NASA_API_KEY = process.env.NASA_API_KEY;
 
 // Middleware
-app.use(cors());
+app.use(cors(cors({
+    origin: "https://nasa-frontend-era4.onrender.com", // frontend URL on Render
+  })));
 app.use(express.json());
 
 // APOD route: returns today's Astronomy Picture of the Day
