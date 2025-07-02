@@ -27,7 +27,7 @@ A full-stack web application built using **React** and **Node.js + Express**, in
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/nasa-api-explorer.git
+git clone https://github.com/Mounavi1-eng/NASA_APP.git
 cd nasa-api-explorer
 ```
 
