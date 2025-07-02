@@ -1,0 +1,55 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.nasa-image {
+  transition: transform 0.3s ease;
+}
+
+.nasa-image:hover {
+  transform: scale(1.02);
+}
+
+/* Animation for loading spinner */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1.5s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-content {
+    padding: 10px;
+  }
+}
+
+/* Special styling for APOD cards */
+.apod-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.apod-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+}
