@@ -17,7 +17,7 @@ app.use(express.json());
 // APOD route: returns today's Astronomy Picture of the Day
 app.get('/api/apod', async (req, res) => {
   try {
-    const url = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`;
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.NASA_API_KEY}`;
     const response = await axios.get(url);
     res.json(response.data);
   } catch (error) {
@@ -42,7 +42,7 @@ app.get('/api/neo', async (req, res) => {
     }
 
     // Construct URL
-    const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start_date}&end_date=${end_date}&api_key=${NASA_API_KEY}`;
+    const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start_date}&end_date=${end_date}&api_key=${process.env.NASA_API_KEY}`;
     
     const response = await axios.get(url);
 
