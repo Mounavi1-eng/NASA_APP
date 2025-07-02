@@ -31,7 +31,7 @@ const NEOPage = () => {
         end_date: format(endDate, 'yyyy-MM-dd'),
       });
 
-      const response = await axios.get(`/api/neo?${params.toString()}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_BASE}/api/neo?${params.toString()}`);
       setNeoData(response.data.near_earth_objects);
     } catch (err) {
       console.error('Error fetching NEO:', err.message);
